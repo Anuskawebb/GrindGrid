@@ -1,4 +1,4 @@
-import { createSupabaseServerClient } from '@/lib/supabase'
+import { createSupabaseServerClient } from '@/lib/supabaseServer'
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
@@ -6,10 +6,11 @@ export async function GET(request: Request) {
   const code = requestUrl.searchParams.get('code')
 
   if (code) {
-    const supabase = createSupabaseServerClient()
+    // createSupabaseServerClient is async — we await it:
+    const supabase = await createSupabaseServerClient()
     await supabase.auth.exchangeCodeForSession(code)
   }
 
-  // URL to redirect to after sign in process completes
+  // Redirect to dashboard after magic link / OAuth redirect
   return NextResponse.redirect(requestUrl.origin + '/dashboard')
 }
