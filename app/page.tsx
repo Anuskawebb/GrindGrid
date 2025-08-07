@@ -49,7 +49,7 @@ export default function LandingPage() {
         <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
 
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 relative z-10 text-grindgrid-text-primary">
-          Master Your Skills, <br className="hidden md:block" /> Forge Your Future
+          Grind Your Skills, <br className="hidden md:block" /> Forge Your Future
         </h1>
         <p className="text-lg md:text-xl text-grindgrid-text-secondary mb-10 max-w-3xl relative z-10">
           GrindGrid is your AI-powered companion for skill development. Track progress, get smart suggestions, and achieve your learning goals.

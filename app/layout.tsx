@@ -9,8 +9,8 @@ import { AppSidebar } from "@/components/app-sidebar"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "GrindGrid - Master Your Skills, Forge Your Future",
-  description: "AI-powered SaaS platform for skill development and progress tracking.",
+  title: "GrindGrid - Grind Your Skills, Forge Your Future",
+  description: "AI-powered platform for skill development and progress tracking.",
     generator: 'v0.dev'
 }
 
