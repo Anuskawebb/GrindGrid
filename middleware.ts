@@ -58,10 +58,10 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  const { data: profileData } = await supabase
+  const { data: profileData, error: profileError } = await supabase
     .from('profiles')
     .select('username')
-    .eq('id', user?.id)
+    .eq('id', user?.id || '')
     .single()
 
   const isOnboardingComplete = profileData?.username !== null && profileData?.username !== undefined; // Assuming username indicates onboarding completion
