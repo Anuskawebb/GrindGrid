@@ -22,17 +22,21 @@ export default function LoginPage() {
     setLoading(true)
     setError(null)
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     })
 
     if (error) {
       setError(error.message)
+      setLoading(false)
     } else {
-      router.push('/dashboard')
+      // Add a small delay to ensure the session is established
+      setTimeout(() => {
+        router.refresh() // Refresh the router to update the session
+        router.push('/dashboard')
+      }, 500)
     }
-    setLoading(false)
   }
 
   const handleGoogleSignIn = async () => {
